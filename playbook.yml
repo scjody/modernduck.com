@@ -1,0 +1,16 @@
+- hosts: all
+  gather_facts: False
+  tasks:
+  - git: repo=git@github.com:scjody/modernduck.com
+         dest=/home/scjody/cgi.modernduck.com
+         accept_hostkey=True
+         force=no
+
+  - pip: chdir=/home/scjody/cgi.modernduck.com
+         requirements=requirements.txt
+         virtualenv=env
+
+  - shell: quack/manage.py collectstatic --noinput
+           chdir=cgi.modernduck.com
+
+  - shell: touch cgi.modernduck.com/tmp/restart.txt
