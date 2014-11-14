@@ -7,9 +7,11 @@ sys.path.insert(0,cwd+'/env/bin')
 sys.path.insert(0,cwd+'/env/lib/python2.7/site-packages/django')
 sys.path.insert(0,cwd+'/env/lib/python2.7/site-packages')
 
-from quack_environment import QUACK_MYSQL_PASSWORD
-os.environ['QUACK_MYSQL_PASSWORD'] = QUACK_MYSQL_PASSWORD
-os.system('printenv')
+with open(cwd + '/quack_env') as env:
+    for line in env:
+        discard, expr = line.split(' ')
+        key, value = expr.split('=')
+        os.environ[key] = value
 
 os.environ['DJANGO_SETTINGS_MODULE'] = "quack.settings"
 from django.core.wsgi import get_wsgi_application

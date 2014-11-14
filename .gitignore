@@ -56,3 +56,4 @@ target/
 # Django / quack
 public/static/
 quackdb.sqlite3
+quack_env
