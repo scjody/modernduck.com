@@ -53,5 +53,6 @@ docs/_build/
 # PyBuilder
 target/
 
-# Django
+# Django / quack
 public/static/
+quackdb.sqlite3

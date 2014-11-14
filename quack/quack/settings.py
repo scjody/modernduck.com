@@ -58,14 +58,22 @@ WSGI_APPLICATION = 'quack.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
-DATABASES = {
-    'default': {
+if 'QUACK_USE_SQLITE' in os.environ:
+    default_db = {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR + 'db.sqlite3',
+    }
+else:
+    default_db = {
         'ENGINE': 'django.db.backends.mysql',
         'HOST': 'mysql.modernduck.com',
         'NAME': 'django_quack',
         'USER': 'django_quack',
-        'PASSWORD': 'Kai9Ieph5thequei',
+        'PASSWORD': os.getenv('QUACK_MYSQL_PASSWORD'),
     }
+
+DATABASES = {
+    'default': default_db,
 }
 
 # Internationalization
