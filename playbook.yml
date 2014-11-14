@@ -10,7 +10,7 @@
          requirements=requirements.txt
          virtualenv=env
 
-  - shell: quack/manage.py collectstatic --noinput
+  - shell: env_wrapper quack/manage.py collectstatic --noinput
            chdir=cgi.modernduck.com
 
   - shell: touch cgi.modernduck.com/tmp/restart.txt
