@@ -96,3 +96,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.dirname(BASE_DIR) + '/public/static/'
+
+TEMPLATE_DIRS = (os.path.dirname(BASE_DIR) + '/quack/templates',)
