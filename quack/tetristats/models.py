@@ -1,3 +1,16 @@
 from django.db import models
+from django.forms import ModelForm
 
-# Create your models here.
+
+class Stat(models.Model):
+    uuid = models.CharField(max_length=36)
+    total_gas = models.FloatField()
+    score = models.IntegerField()
+    lines = models.IntegerField()
+    complete = models.BooleanField(default=False)
+
+
+class StatForm(ModelForm):
+    class Meta:
+        model = Stat
+        exclude = []
