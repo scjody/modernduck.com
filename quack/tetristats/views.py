@@ -61,6 +61,7 @@ def show(request):
     context = {
         'stats': stats,
         'agg': agg,
+        'pagename': 'stats',
     }
 
     return render(request, 'tetristats/stats.html', context)
