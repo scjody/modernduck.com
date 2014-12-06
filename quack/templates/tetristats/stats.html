@@ -2,7 +2,7 @@
 
 <h1>Fire Tetris Stats!</h1>
 
-<h2>Recent statistics:</h2>
+<h2>Recent plays:</h2>
 <table border='1'>
     <tr>
       <th>Gas Consumption</th>
@@ -20,4 +20,15 @@
       <td>{% if not stat.complete %}(in progress){% endif %}</td>
     </tr>
   {% endfor %}
+</table>
+
+<h2>Statistics:</h2>
+<table border='1'>
+  <tr><td>Average play time</td><td align='right'>{{ agg.time__avg }} s</td></tr>
+  <tr><td>Average gas per game</td><td align='right'>{{ agg.total_gas__avg|floatformat }} cats</td></tr>
+  <tr><td>Average gas rate</td><td align='right'>{{ agg.gas_rate__avg|floatformat }} cats/s</td></tr>
+  <tr><td>High Score</td><td align='right'>{{ agg.score__max }}</td></tr>
+  <tr><td>Most lines cleared</td><td align='right'>{{ agg.lines__max }}</td></tr>
+  <tr><td>Longest play</td><td align='right'>{{ agg.time__max }} s</td></tr>
+  <tr><td>Most gas per game</td><td align='right'>{{ agg.total_gas__max|floatformat }} cats</td></tr>
 </table>
