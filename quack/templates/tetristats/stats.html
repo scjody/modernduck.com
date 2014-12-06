@@ -1,13 +1,23 @@
-<table>
+<title>Fire Tetris Stats!</title>
+
+<h1>Fire Tetris Stats!</h1>
+
+<h2>Recent statistics:</h2>
+<table border='1'>
+    <tr>
+      <th>Gas Consumption</th>
+      <th>Score</th>
+      <th>Lines Cleared</th>
+      <th>Play Time</th>
+      <th></th>
+    </tr>
   {% for stat in stats %}
     <tr>
-      <td>{{ stat.uuid }}</td>
-      <td>{{ stat.total_gas }}</td>
-      <td>{{ stat.score }}</td>
-      <td>{{ stat.lines }}</td>
-      <td>{{ stat.time }}</td>
-      <td>{{ stat.complete }}</td>
-      <td>{{ stat.timestamp }}</td>
+      <td align='right'>{{ stat.total_gas }} cats</td>
+      <td align='right'>{{ stat.score }}</td>
+      <td align='right'>{{ stat.lines }}</td>
+      <td align='right'>{{ stat.time }} s</td>
+      <td>{% if not stat.complete %}(in progress){% endif %}</td>
     </tr>
   {% endfor %}
 </table>
