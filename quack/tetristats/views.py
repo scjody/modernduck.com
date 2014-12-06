@@ -14,6 +14,7 @@ from tetristats.models import Stat, StatForm
 
 py.sign_in("JodyMcintyre", "htzkacen0d")
 home = TemplateView.as_view(template_name='tetristats/home.html')
+faq = TemplateView.as_view(template_name='tetristats/faq.html')
 
 
 @csrf_exempt
