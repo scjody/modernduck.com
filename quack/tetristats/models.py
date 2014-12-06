@@ -7,6 +7,7 @@ class Stat(models.Model):
     total_gas = models.FloatField()
     score = models.IntegerField()
     lines = models.IntegerField()
+    time = models.IntegerField()
     complete = models.BooleanField(default=False)
 
 
