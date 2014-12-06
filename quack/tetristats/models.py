@@ -9,9 +9,10 @@ class Stat(models.Model):
     lines = models.IntegerField()
     time = models.IntegerField()
     complete = models.BooleanField(default=False)
+    timestamp = models.DateTimeField(auto_now=True)
 
 
 class StatForm(ModelForm):
     class Meta:
         model = Stat
-        exclude = []
+        exclude = ['timestamp']

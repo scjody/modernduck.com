@@ -1,3 +1,5 @@
+import datetime
+
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
@@ -30,5 +32,8 @@ def collector(request):
 
 
 def show(request):
-    stats = Stat.objects.all()
+    show_start = datetime.datetime.utcnow() - datetime.timedelta(minutes=10)
+    stats = Stat.objects.filter(timestamp__gte=show_start)
+    if stats.count() < 5:
+         stats = Stat.objects.all().order_by('-timestamp')[0:5]
     return render(request, 'tetristats/stats.html', {'stats': stats})
