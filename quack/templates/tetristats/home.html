@@ -6,7 +6,7 @@
     body      { font-family: Helvetica, sans-serif; }
     #tetris   { margin: 1em auto; padding: 1em; border: 4px solid black; border-radius: 10px; background-color: #F8F8F8; }
     #stats    { display: inline-block; vertical-align: top; }
-    #canvas   { display: inline-block; vertical-align: top; background: url(texture.jpg); box-shadow: 10px 10px 10px #999; border: 2px solid #333; }
+    #canvas   { display: inline-block; vertical-align: top; background: url(texture.jpg); box-shadow: 10px 10px 10px #999; border: 2px solid #333; margin-right: 20px; }
     .infocol  { display: inline-block; vertical-align: top; position: relative; }
     #menu p   { margin: 0.5em 0; text-align: center; }
     #menu p a { text-decoration: none; color: black; }
@@ -14,6 +14,7 @@
     #score    { color: red; font-weight: bold; vertical-align: middle; }
     #rows     { color: blue; font-weight: bold; vertical-align: middle; }
     #stats    { position: absolute; bottom: 0em; right: 1em; }
+    #info  { font-size: 75%; }
     @media screen and (min-width:   0px) and (min-height:   0px)  { #tetris { font-size: 0.75em; width: 350px; } .infocol { width: 100px; height: 200px; } #upcoming { width:  50px; height:  50px; } #canvas { width: 100px; height: 200px; } } /* 10px chunks */
     @media screen and (min-width: 650px) and (min-height: 400px)  { #tetris { font-size: 1.00em; width: 600px; } .infocol { width: 150px; height: 300px; } #upcoming { width:  75px; height:  75px; } #canvas { width: 150px; height: 300px; } } /* 15px chunks */
     @media screen and (min-width: 700px) and (min-height: 500px)  { #tetris { font-size: 1.25em; width: 650px; } .infocol { width: 200px; height: 400px; } #upcoming { width: 100px; height: 100px; } #canvas { width: 200px; height: 400px; } } /* 20px chunks */
@@ -38,7 +39,34 @@
       Sorry, this example cannot be run because your browser does not support the &lt;canvas&gt; element
     </canvas>
     <div id="info" class="infocol">
-       <p>INFO!</p>
+       <p>This game exists to estimate gas consumption and test gameplay
+       concepts for FIRE TETRIS.</p>
+       <p>See Game Statistics</p>
+       <p>Frequently Asked Questions</p>
+       <p>
+         <!-- Begin MailChimp Signup Form -->
+         <link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+         <style type="text/css">
+         	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+         	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+         	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+         </style>
+         <div id="mc_embed_signup">
+         <form action="//modernduck.us9.list-manage.com/subscribe/post?u=6683638c10c678ee30a3d3e57&amp;id=c4924ee8a0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+             <div id="mc_embed_signup_scroll">
+         	<label for="mce-EMAIL">For project updates, subscribe:</label>
+         	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+             <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+             <div style="position: absolute; left: -5000px;"><input type="text" name="b_6683638c10c678ee30a3d3e57_c4924ee8a0" tabindex="-1" value=""></div>
+             <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+             </div>
+         </form>
+         </div>
+
+         <!--End mc_embed_signup-->
+       </p>
+
+       <p>Comments?  <a href='mailto:firetetris@modernduck.com'>Email us</a></p>
     </div>
   </div>
 
