@@ -10,6 +10,9 @@
          requirements=requirements.txt
          virtualenv=env
 
+  - shell: git submodule update --init
+           chdir=cgi.modernduck.com
+
   - shell: ./env_wrapper quack/manage.py collectstatic --noinput
            chdir=cgi.modernduck.com
 
