@@ -13,4 +13,7 @@
   - shell: ./env_wrapper quack/manage.py collectstatic --noinput
            chdir=cgi.modernduck.com
 
+  - shell: ./env_wrapper quack/manage.py migrate
+           chdir=cgi.modernduck.com
+
   - shell: touch cgi.modernduck.com/tmp/restart.txt
