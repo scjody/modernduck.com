@@ -1,10 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Fire Tetris Gas Consumption Estimator</title>
+{% extends "tetristats/_basepage.html" %}
+
+{% block title %}
+Fire Tetris Gas Consumption Estimator
+{% endblock %}
+
+{% block content %}
   <style>
     body      { font-family: Helvetica, sans-serif; }
-    #tetris   { margin: 1em auto; padding: 1em; border: 4px solid black; border-radius: 10px; background-color: #F8F8F8; }
+    #tetris   { margin: 1em auto; padding: 1em; border: 4px solid black; border-radius: 10px; background-color: #F8F8F8; box-sizing: content-box; }
     #stats    { display: inline-block; vertical-align: top; }
     #canvas   { display: inline-block; vertical-align: top; background: url(texture.jpg); box-shadow: 10px 10px 10px #999; border: 2px solid #333; margin-right: 20px; }
     .infocol  { display: inline-block; vertical-align: top; position: relative; }
@@ -53,5 +56,4 @@
   <script src="/static/js/stats.js"></script>
   <script src="/static/js/tetris.js"></script>
   <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-</body>
-</html>
+{% endblock %}
