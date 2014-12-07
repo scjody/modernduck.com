@@ -3,7 +3,7 @@ import datetime
 import plotly.plotly as py
 import plotly.graph_objs as pyg
 
-from django.db.models import Avg, Max, Sum
+from django.db.models import Avg, Count, Max, Sum
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
@@ -52,6 +52,7 @@ def stats(request):
         Max('score'),
         Max('lines'),
         Max('time'),
+        Count('time'),
     )
 
     agg['gas_rate__avg'] = agg['total_gas__sum'] / agg['time__sum']
