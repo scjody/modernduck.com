@@ -40,8 +40,8 @@ def collector(request):
 def stats(request):
     show_start = datetime.datetime.utcnow() - datetime.timedelta(minutes=10)
     stats = Stat.objects.filter(timestamp__gte=show_start)
-    if stats.count() < 5:
-         stats = Stat.objects.all().order_by('-timestamp')[0:5]
+    if stats.count() < 7:
+         stats = Stat.objects.all().order_by('-timestamp')[0:7]
 
     agg = Stat.objects.all().aggregate(
         Avg('total_gas'),
