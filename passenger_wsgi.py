@@ -9,7 +9,7 @@ sys.path.insert(0,cwd+'/env/lib/python2.7/site-packages')
 
 with open(cwd + '/quack_env') as env:
     for line in env:
-        discard, expr = line.split(' ')
+        discard, expr = line.strip().split(' ')
         key, value = expr.split('=')
         os.environ[key] = value
 
