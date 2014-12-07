@@ -37,7 +37,7 @@ def collector(request):
     return HttpResponse(status=201)
 
 
-def show(request):
+def stats(request):
     show_start = datetime.datetime.utcnow() - datetime.timedelta(minutes=10)
     stats = Stat.objects.filter(timestamp__gte=show_start)
     if stats.count() < 5:
