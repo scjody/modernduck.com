@@ -1,0 +1,3 @@
+[submodule "quack/tetristats/static/javascript-tetris"]
+	path = quack/tetristats/static/javascript-tetris
+	url = git@github.com:scjody/javascript-tetris.git
