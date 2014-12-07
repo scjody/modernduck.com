@@ -31,7 +31,7 @@ Fire Tetris Stats!</title>
   </thead>
   {% for stat in stats %}
     <tr>
-      <td>{{ stat.total_gas }} cats</td>
+      <td>{{ stat.total_gas|floatformat }} cats</td>
       <td>{{ stat.score }}</td>
       <td>{{ stat.lines }}</td>
       <td>{{ stat.time }} s</td>
@@ -47,7 +47,7 @@ Fire Tetris Stats!</title>
   <h2>Statistics:</h2>
 </div>
 <table class='table table-striped table-nonfluid'>
-  <tr><td>Average play time</td><td align='right'>{{ agg.time__avg }} s</td></tr>
+  <tr><td>Average play time</td><td align='right'>{{ agg.time__avg|floatformat }} s</td></tr>
   <tr><td>Average gas per game</td><td align='right'>{{ agg.total_gas__avg|floatformat }} cats</td></tr>
   <tr><td>Average gas rate</td><td align='right'>{{ agg.gas_rate__avg|floatformat }} cats/s</td></tr>
   <tr><td>High Score</td><td align='right'>{{ agg.score__max }}</td></tr>
